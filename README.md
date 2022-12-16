@@ -1,14 +1,15 @@
-import { Goto } from "../src"
+# GOTO-TS
 
-let a = 1
+`goto` in typescript/javascript because we've all been missing it and also why the fuck not.
 
-describe('goto',() => {
-    it('hello',() => {
-    let fn = new Goto<number>()
-        .label("1",goto => {
+```ts
+    let a = 1
+
+    const fn = new Goto<number>()
+        .label("1",() => {
             console.log("hello 1")
         })
-        .label("2",goto => {
+        .label("2",() => {
             console.log("hello 2")
 
             if(a++ < 10){
@@ -22,7 +23,7 @@ describe('goto',() => {
         .toFunction()
 
     fn()
-        .then(b => expect(b).toEqual(3))
-        .catch(err => fail('heh'))
-    })
-})
+        .then(b => b === 3 //true)
+```
+
+More to come soon...

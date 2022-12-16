@@ -44,7 +44,6 @@ export class Goto<T extends any> {
         .then(
             val => index >= Object.keys(this.fns).length || index < 0 || val !== undefined ? val : this.runIndex(index+1),
             name => this.runLabel(name)
-            
         )
     }
 }
