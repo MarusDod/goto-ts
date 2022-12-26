@@ -10,7 +10,6 @@
     "ts-jest": "^29.0.3",
     "typescript": "^4.9.4"
   },
-
   "homepage": "https://github.com/MarusDod/goto-ts#readme",
   "repository": "https://github.com/MarusDod/goto-ts",
   "email": "markitos.2001@hotmail.com",
@@ -20,7 +19,7 @@
   "name": "goto-ts",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Goto in typescript",
   "license": "MIT"
 }
