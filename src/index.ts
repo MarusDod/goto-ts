@@ -1,10 +1,10 @@
-type GotoFn<T> = (goto: (name: string) => void,_return: (x: T) => void) => any
+type GotoFn<T> = (goto: (name: string) => void,_return: (x?: T) => void) => any
 
-export class Goto<T extends any> {
+export class Goto<T> {
     private fns: Record<string,GotoFn<T>>
 
-    constructor() {
-        this.fns = {}
+    constructor(body?: Record<string,GotoFn<T>>) {
+        this.fns = body ?? {}
     }
 
     toFunction(): () => Promise<T | undefined> {
@@ -47,3 +47,5 @@ export class Goto<T extends any> {
         )
     }
 }
+
+export const withGoto = <T>(body: Record<string,GotoFn<T>>) => new Goto<T>(body).run()
